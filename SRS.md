@@ -130,7 +130,116 @@ flowchart TD
 ```
 7. Functional Requirement Decompositon
 
+| Mã | Functional Requirement |
+|---|---|
+| **FR01** | Đăng ký, đăng nhập và quản lý tài khoản người dùng. |
+| **FR02** | Cập nhật thông tin cá nhân và trạng thái tài khoản. |
+| **FR03** | Khách hàng nhập điểm đón, điểm đến và lựa chọn loại xe/dịch vụ. |
+| **FR04** | Khách hàng gửi và kiểm tra trạng thái yêu cầu đặt chuyến. |
+| **FR05** | Hệ thống tìm kiếm và lựa chọn tài xế phù hợp. |
+| **FR06** | Hệ thống gửi yêu cầu chuyến đến tài xế. |
+| **FR07** | Tài xế chấp nhận hoặc từ chối yêu cầu chuyến. |
+| **FR08** | Hệ thống xử lý trường hợp tài xế không phản hồi và tìm tài xế thay thế. |
+| **FR09** | Hệ thống thông báo khi không tìm được tài xế. |
+| **FR10** | Hệ thống tạo và quản lý thông tin chuyến đi. |
+| **FR11** | Tài xế cập nhật trạng thái chuyến đi. |
+| **FR12** | Hệ thống xử lý hủy chuyến của khách hàng hoặc tài xế. |
+| **FR13** | Hệ thống ghi nhận và cập nhật vị trí tài xế. |
+| **FR14** | Khách hàng theo dõi trạng thái và vị trí chuyến đi. |
+| **FR15** | Khách hàng xem thông tin tài xế và thời gian dự kiến đến. |
+| **FR16** | Tài xế quản lý hồ sơ và thông tin phương tiện. |
+| **FR17** | Tài xế chuyển trạng thái sẵn sàng hoặc không sẵn sàng nhận chuyến. |
+| **FR18** | Nhân viên vận hành quản lý khách hàng, tài xế và phương tiện. |
+| **FR19** | Hệ thống tính và lưu thông tin cước chuyến đi. |
+| **FR20** | Khách hàng lựa chọn phương thức thanh toán. |
+| **FR21** | Hệ thống xử lý thanh toán tiền mặt và thanh toán điện tử. |
+| **FR22** | Hệ thống ghi nhận và thông báo kết quả thanh toán. |
+| **FR23** | Hệ thống gửi thông báo đến khách hàng và tài xế. |
+| **FR24** | Khách hàng xem lịch sử chuyến đi. |
+| **FR25** | Khách hàng đánh giá tài xế sau khi hoàn thành chuyến. |
+| **FR26** | Hệ thống lưu trữ lịch sử chuyến đi và đánh giá. |
+| **FR27** | Nhân viên vận hành theo dõi các chuyến đang diễn ra và trạng thái tài xế. |
+| **FR28** | Nhân viên vận hành xử lý các chuyến và giao dịch bị lỗi. |
+| **FR29** | Nhân viên vận hành tra cứu thông tin chuyến đi và giao dịch. |
+| **FR30** | Hệ thống cung cấp báo cáo về chuyến đi, doanh thu và hiệu quả tài xế. |
+| **FR31** | Hệ thống xác thực và phân quyền người dùng theo vai trò. |
+| **FR32** | Hệ thống bảo vệ dữ liệu cá nhân, vị trí và giao dịch. |
+| **FR33** | Hệ thống lưu vết các thao tác quan trọng. |
+| **FR34** | Hệ thống hỗ trợ tích hợp với các dịch vụ bên ngoài. |
+| **FR35** | Hệ thống hỗ trợ mở rộng loại dịch vụ, phương thức thanh toán và kênh thông báo. |
+
 8. Business Rules & Exception
 
+| Mã | Business Rule | Mô tả |
+|---|---|---|
+| **BRL01** | **Xác thực tài khoản** | Người dùng phải đăng nhập và được xác thực trước khi sử dụng các chức năng yêu cầu tài khoản. |
+| **BRL02** | **Tài xế sẵn sàng nhận chuyến** | Chỉ tài xế có trạng thái **sẵn sàng** mới được hệ thống xem xét để phân công chuyến. |
+| **BRL03** | **Phân công tài xế** | Hệ thống ưu tiên tài xế phù hợp và gần vị trí đón khách dựa trên các tiêu chí vận hành được doanh nghiệp xác định. |
+| **BRL04** | **Thời gian phản hồi tài xế** | Tài xế phải phản hồi yêu cầu chuyến trong khoảng thời gian do doanh nghiệp quy định. |
+| **BRL05** | **Tìm tài xế thay thế** | Nếu tài xế từ chối hoặc không phản hồi, hệ thống phải tiếp tục tìm tài xế phù hợp khác mà không yêu cầu khách hàng tạo lại chuyến. |
+| **BRL06** | **Không tìm được tài xế** | Nếu không còn tài xế phù hợp, hệ thống phải thông báo rõ ràng cho khách hàng và kết thúc yêu cầu đặt chuyến. |
+| **BRL07** | **Trạng thái chuyến** | Chuyến đi phải được quản lý theo các trạng thái hợp lệ và chỉ được chuyển sang trạng thái tiếp theo khi thỏa điều kiện nghiệp vụ. |
+| **BRL08** | **Hoàn thành chuyến** | Chỉ chuyến đã được tài xế thực hiện và cập nhật hoàn thành mới được chuyển sang bước tính cước và thanh toán. |
+| **BRL09** | **Tính cước** | Số tiền phải trả được xác định dựa trên loại dịch vụ và các thông tin chuyến đi theo chính sách giá của doanh nghiệp. |
+| **BRL10** | **Thanh toán điện tử** | Giao dịch điện tử phải được thực hiện thông qua nhà cung cấp thanh toán bên ngoài; hệ thống CAB không lưu thông tin nhạy cảm của thẻ hoặc tài khoản thanh toán. |
+| **BRL11** | **Thanh toán thất bại** | Khi giao dịch điện tử thất bại, hệ thống phải thông báo cho khách hàng và cho phép xử lý lại theo chính sách của doanh nghiệp. |
+| **BRL12** | **Đánh giá tài xế** | Khách hàng chỉ được đánh giá tài xế sau khi chuyến đi hoàn thành. |
+| **BRL13** | **Phân quyền** | Người dùng chỉ được thực hiện các chức năng phù hợp với vai trò và quyền được cấp. |
+| **BRL14** | **Quản trị nhạy cảm** | Các thao tác quản trị nhạy cảm chỉ được thực hiện bởi nhân viên có quyền phù hợp. |
+| **BRL15** | **Bảo vệ dữ liệu** | Thông tin cá nhân, phương tiện, vị trí và giao dịch phải được bảo vệ và chỉ được truy cập bởi các đối tượng được cấp quyền. |
+| **BRL16** | **Lưu vết hoạt động** | Các thao tác quản trị và nghiệp vụ quan trọng phải được ghi nhận để phục vụ kiểm tra và xử lý sự cố. |
+| **BRL17** | **Trạng thái tài xế** | Tài xế đang thực hiện một chuyến không được đồng thời nhận một chuyến khác nếu chính sách vận hành không cho phép. |
+| **BRL18** | **Thông báo sự kiện** | Các sự kiện quan trọng như nhận chuyến, tài xế đến, hoàn thành chuyến và kết quả thanh toán phải được thông báo đến đối tượng liên quan. |
 
+
+| Mã | Exception | Điều kiện | Cách xử lý |
+|---|---|---|---|
+| **EX01** | **Không tìm được tài xế** | Không có tài xế phù hợp hoặc tất cả tài xế đều từ chối | Thông báo cho khách hàng và kết thúc yêu cầu. |
+| **EX02** | **Tài xế không phản hồi** | Tài xế không phản hồi trong thời gian quy định | Hệ thống bỏ qua tài xế và tìm tài xế khác. |
+| **EX03** | **Tài xế từ chối chuyến** | Tài xế từ chối yêu cầu | Hệ thống tiếp tục tìm tài xế khác. |
+| **EX04** | **Mất kết nối khi đặt chuyến** | Khách hàng mất kết nối trong quá trình gửi yêu cầu | Hệ thống phải đảm bảo không tạo chuyến trùng và cho phép khách hàng kiểm tra lại trạng thái yêu cầu. |
+| **EX05** | **Mất kết nối tài xế** | Không nhận được cập nhật từ tài xế | Giữ trạng thái hiện tại trong khoảng thời gian cho phép và thông báo cho bộ phận vận hành nếu cần. |
+| **EX06** | **Thanh toán điện tử thất bại** | Nhà cung cấp thanh toán trả về kết quả thất bại | Thông báo khách hàng và cho phép thực hiện lại theo chính sách. |
+| **EX07** | **Nhà cung cấp thanh toán không khả dụng** | Không thể kết nối với Payment Provider | Ghi nhận lỗi, thông báo khách hàng và không làm ảnh hưởng đến các chức năng khác của hệ thống. |
+| **EX08** | **Lỗi dịch vụ thông báo** | Không thể gửi thông báo đến khách hàng hoặc tài xế | Ghi nhận lỗi và thực hiện cơ chế gửi lại theo chính sách. |
+| **EX09** | **Tài xế hủy chuyến** | Tài xế hủy sau khi đã nhận chuyến | Cập nhật trạng thái và kích hoạt quy trình tìm tài xế thay thế nếu chính sách cho phép. |
+| **EX10** | **Khách hàng hủy chuyến** | Khách hàng yêu cầu hủy chuyến | Kiểm tra điều kiện hủy và thực hiện theo chính sách của doanh nghiệp. |
+| **EX11** | **Sai dữ liệu chuyến đi** | Thông tin điểm đón, điểm đến hoặc loại xe không hợp lệ | Không tạo chuyến và yêu cầu khách hàng nhập lại thông tin. |
+| **EX12** | **Không cập nhật được vị trí** | Hệ thống không nhận được vị trí tài xế | Sử dụng vị trí gần nhất nếu có và thông báo tình trạng cho các bên liên quan. |
+| **EX13** | **Lỗi hệ thống** | Một thành phần của hệ thống gặp sự cố | Cô lập thành phần lỗi, ghi log và đảm bảo các chức năng độc lập khác tiếp tục hoạt động nếu có thể. |
+| **EX14** | **Trùng yêu cầu đặt chuyến** | Khách hàng gửi lại yêu cầu do mạng chậm/mất kết nối | Hệ thống kiểm tra yêu cầu trước đó để tránh tạo nhiều chuyến giống nhau. |
+
+
+9. Data Modeling
+    khách hàng có những thuộc tính gì...
+
+10. Non-functional Requirement
+
+| Mã | Tên | Mô tả |
+|---|---|---|
+| **NFR01** | **Hiệu năng** | Hệ thống phải có thời gian phản hồi phù hợp đối với các chức năng đặt chuyến, tìm tài xế và theo dõi trạng thái. |
+| **NFR02** | **Khả năng chịu tải** | Hệ thống phải có khả năng phục vụ số lượng lớn khách hàng, tài xế và yêu cầu đặt chuyến đồng thời. |
+| **NFR03** | **Khả năng mở rộng** | Các thành phần của hệ thống phải có khả năng mở rộng độc lập khi tải tăng cao. |
+| **NFR04** | **Tính sẵn sàng** | Hệ thống phải hoạt động ổn định và hạn chế gián đoạn dịch vụ, đặc biệt trong thời gian nhu cầu tăng cao. |
+| **NFR05** | **Độ tin cậy** | Lỗi tại một thành phần như thanh toán hoặc thông báo không được làm toàn bộ hệ thống đặt xe ngừng hoạt động. |
+| **NFR06** | **Khả năng phục hồi** | Hệ thống phải có khả năng xử lý và phục hồi khi xảy ra lỗi kết nối hoặc lỗi từ các dịch vụ bên ngoài. |
+| **NFR07** | **Bảo mật** | Hệ thống phải bảo vệ thông tin cá nhân, phương tiện, vị trí và dữ liệu giao dịch khỏi truy cập trái phép. |
+| **NFR08** | **Xác thực và phân quyền** | Hệ thống phải đảm bảo người dùng chỉ được truy cập các chức năng và dữ liệu phù hợp với quyền được cấp. |
+| **NFR09** | **Bảo mật thanh toán** | Hệ thống không được lưu trực tiếp thông tin nhạy cảm của thẻ hoặc tài khoản thanh toán. |
+| **NFR10** | **Ghi log và kiểm toán** | Hệ thống phải lưu vết các thao tác quan trọng và lỗi để phục vụ kiểm tra, giám sát và xử lý sự cố. |
+| **NFR11** | **Toàn vẹn dữ liệu** | Hệ thống phải đảm bảo dữ liệu chuyến đi, thanh toán và trạng thái được lưu trữ chính xác và nhất quán. |
+| **NFR12** | **Khả năng bảo trì** | Hệ thống phải dễ dàng bảo trì, sửa lỗi và nâng cấp các thành phần. |
+| **NFR13** | **Khả năng triển khai** | Hệ thống phải cho phép triển khai hoặc cập nhật từng thành phần mà hạn chế ảnh hưởng đến các chức năng đang hoạt động. |
+| **NFR14** | **Khả năng tích hợp** | Hệ thống phải có khả năng tích hợp với các dịch vụ bên ngoài như thanh toán, bản đồ và thông báo. |
+| **NFR15** | **Khả năng sử dụng** | Giao diện phải rõ ràng, dễ sử dụng đối với khách hàng, tài xế và nhân viên vận hành. |
+| **NFR16** | **Khả năng mở rộng chức năng** | Hệ thống phải cho phép bổ sung loại dịch vụ, phương thức thanh toán và kênh thông báo mới mà không cần thay đổi lớn toàn bộ hệ thống. |
+| **NFR17** | **Khả năng giám sát** | Hệ thống phải hỗ trợ theo dõi trạng thái, lỗi và hiệu năng của các thành phần để phát hiện và xử lý sự cố kịp thời. |
+
+11. Use case
+
+12.  đặc tả Use case
+
+13. Tiêu chí chấp nhận (AC) acceptance criteria: Quy tắc để xác nhận chức năng đấp ứng yêu cầu khách hàng
+
+14. Truy xuất nguồn gốc yêu cầu (RTM)
 
