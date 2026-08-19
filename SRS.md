@@ -1,12 +1,14 @@
-1.
+1. Business context & Business problem
   Business context:
 Công ty ABC là doanh nghiệp cung cấp dịch vụ đặt xe trực tuyến, phục vụ ba nhóm người dùng chính:
 - Khách hàng:
 - Tài xế
 - Nhân viên vận hành
   
-Hiện tại doanh nghiệp đang sử dụng tổng đài và một ứng dụng đơn giản để tiếp nhận yêu cầu đặt xe. Tuy nhiên, nhiều hoạt động quan trọng vẫn phụ thuộc vào xử lý thủ công. 
+Hiện tại doanh nghiệp đang sử dụng tổng đài và một ứng dụng đơn giản để tiếp nhận yêu cầu đặt xe. Tuy nhiên, nhiều hoạt động quan trọng vẫn phụ thuộc vào xử lý thủ công.
+
  Business problem:
+ 
 Công ty ABC đang phụ thuộc nhiều vào quy trình đặt xe và phân công tài xế thủ công, hệ thống hiện tại chưa quản lý tập trung và chưa có khả năng mở rộng, dẫn đến khó khăn trong việc phục vụ khách hàng, điều hành chuyến đi, quản lý thanh toán và kiểm soát hoạt động kinh doanh.
 
 2. Stakeholders
