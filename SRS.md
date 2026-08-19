@@ -213,7 +213,127 @@ flowchart TD
 9. Data Modeling
     khách hàng có những thuộc tính gì...
 
-10. Non-functional Requirement
+### 9.1 Customer – Khách hàng
+
+| Thuộc tính | Mô tả |
+|---|---|
+| CustomerID | Mã khách hàng |
+| FullName | Họ và tên |
+| Phone | Số điện thoại |
+| Email | Email |
+| PasswordHash | Mật khẩu đã mã hóa |
+| DateOfBirth | Ngày sinh |
+| Gender | Giới tính |
+| Address | Địa chỉ |
+| Status | Trạng thái tài khoản |
+| CreatedAt | Thời gian tạo tài khoản |
+
+### 9.2 Driver – Tài xế
+
+| Thuộc tính | Mô tả |
+|---|---|
+| DriverID | Mã tài xế |
+| FullName | Họ và tên |
+| Phone | Số điện thoại |
+| Email | Email |
+| PasswordHash | Mật khẩu đã mã hóa |
+| LicenseNumber | Số giấy phép lái xe |
+| Status | Trạng thái tài khoản |
+| AvailabilityStatus | Trạng thái sẵn sàng nhận chuyến |
+| CurrentLocation | Vị trí hiện tại |
+| Rating | Điểm đánh giá |
+| CreatedAt | Thời gian tạo tài khoản |
+
+### 9.3 Vehicle – Phương tiện
+
+| Thuộc tính | Mô tả |
+|---|---|
+| VehicleID | Mã phương tiện |
+| DriverID | Mã tài xế |
+| LicensePlate | Biển số xe |
+| VehicleType | Loại xe |
+| Brand | Hãng xe |
+| Model | Model xe |
+| Color | Màu xe |
+| Status | Trạng thái phương tiện |
+
+### 9.4 Trip – Chuyến đi
+
+| Thuộc tính | Mô tả |
+|---|---|
+| TripID | Mã chuyến |
+| CustomerID | Mã khách hàng |
+| DriverID | Mã tài xế |
+| VehicleID | Mã phương tiện |
+| PickupLocation | Điểm đón |
+| Destination | Điểm đến |
+| TripType | Loại dịch vụ |
+| Status | Trạng thái chuyến |
+| Distance | Khoảng cách |
+| EstimatedFare | Cước dự kiến |
+| ActualFare | Cước thực tế |
+| StartTime | Thời gian bắt đầu |
+| EndTime | Thời gian kết thúc |
+| CreatedAt | Thời gian tạo chuyến |
+
+### 9.5 Payment – Thanh toán
+
+| Thuộc tính | Mô tả |
+|---|---|
+| PaymentID | Mã thanh toán |
+| TripID | Mã chuyến |
+| Amount | Số tiền thanh toán |
+| PaymentMethod | Phương thức thanh toán |
+| PaymentStatus | Trạng thái thanh toán |
+| TransactionID | Mã giao dịch từ nhà cung cấp |
+| PaymentTime | Thời gian thanh toán |
+
+### 9.6 Rating – Đánh giá
+
+| Thuộc tính | Mô tả |
+|---|---|
+| RatingID | Mã đánh giá |
+| TripID | Mã chuyến |
+| CustomerID | Mã khách hàng |
+| DriverID | Mã tài xế |
+| Score | Điểm đánh giá |
+| Comment | Nội dung đánh giá |
+| CreatedAt | Thời gian đánh giá |
+
+### 9.7 Notification – Thông báo
+
+| Thuộc tính | Mô tả |
+|---|---|
+| NotificationID | Mã thông báo |
+| UserID | Mã người nhận |
+| Type | Loại thông báo |
+| Title | Tiêu đề |
+| Content | Nội dung thông báo |
+| Status | Trạng thái thông báo |
+| CreatedAt | Thời gian tạo |
+
+### 9.8 Staff – Nhân viên vận hành
+
+| Thuộc tính | Mô tả |
+|---|---|
+| StaffID | Mã nhân viên |
+| FullName | Họ và tên |
+| Phone | Số điện thoại |
+| Email | Email |
+| PasswordHash | Mật khẩu đã mã hóa |
+| RoleID | Mã vai trò |
+| Status | Trạng thái tài khoản |
+| CreatedAt | Thời gian tạo tài khoản |
+
+### 9.9 Role – Vai trò
+
+| Thuộc tính | Mô tả |
+|---|---|
+| RoleID | Mã vai trò |
+| RoleName | Tên vai trò |
+| Description | Mô tả vai trò |
+
+11. Non-functional Requirement
 
 | Mã | Tên | Mô tả |
 |---|---|---|
