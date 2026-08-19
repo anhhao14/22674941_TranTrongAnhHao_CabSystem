@@ -66,9 +66,71 @@ Phạm vi của dự án CAB System bao gồm việc phân tích, thiết kế, 
 | **BR15** | **Quản lý bảo mật và phân quyền** | Hệ thống phải xác thực người dùng, kiểm soát quyền truy cập và lưu vết các thao tác quản trị quan trọng. |
 | **BR16** | **Mở rộng và tích hợp hệ thống** | Hệ thống phải cho phép bổ sung loại dịch vụ, phương thức thanh toán, nhà cung cấp thông báo và các thành phần mới trong tương lai. |
 
-6. Business Process
+## 6. Business Process
 
-7. Functional Requirement 
+```mermaid
+flowchart TD
+    A([Khách hàng có nhu cầu đặt xe]) --> B[Nhập điểm đón và điểm đến]
+    B --> C[Chọn loại xe]
+    C --> D[Gửi yêu cầu đặt chuyến]
 
-6. Business Process:
+    D --> E[Hệ thống tiếp nhận yêu cầu]
+    E --> F[Thông báo yêu cầu được tiếp nhận]
+    F --> G[Tìm kiếm tài xế phù hợp]
+
+    G --> H{Có tài xế phù hợp?}
+
+    H -- Không --> I[Thông báo không tìm được tài xế]
+    I --> J([Kết thúc yêu cầu])
+
+    H -- Có --> K[Gửi yêu cầu đến tài xế phù hợp]
+    K --> L{Tài xế phản hồi?}
+
+    L -- Không phản hồi --> M[Chờ hết thời gian phản hồi]
+    M --> N[Tìm tài xế tiếp theo]
+    N --> G
+
+    L -- Từ chối --> N
+
+    L -- Chấp nhận --> O[Xác nhận tài xế nhận chuyến]
+    O --> P[Thông báo thông tin tài xế cho khách hàng]
+    P --> Q[Tài xế di chuyển đến điểm đón]
+
+    Q --> R[Cập nhật trạng thái: Đã đến điểm đón]
+    R --> S[Thông báo cho khách hàng]
+
+    S --> T[Tài xế đón khách]
+    T --> U[Cập nhật trạng thái: Đã đón khách]
+
+    U --> V[Thực hiện chuyến đi]
+    V --> W[Cập nhật trạng thái: Đang di chuyển]
+
+    W --> X[Tài xế hoàn thành chuyến]
+    X --> Y[Cập nhật trạng thái: Hoàn thành]
+
+    Y --> Z[Tính cước chuyến đi]
+    Z --> AA{Phương thức thanh toán}
+
+    AA -- Tiền mặt --> AB[Khách hàng thanh toán tiền mặt]
+    AA -- Điện tử --> AC[Gửi yêu cầu đến nhà cung cấp thanh toán]
+
+    AC --> AD{Thanh toán thành công?}
+
+    AD -- Không --> AE[Thông báo thanh toán thất bại]
+    AE --> AF[Xử lý thanh toán lại theo chính sách]
+    AF --> AC
+
+    AD -- Có --> AG[Ghi nhận giao dịch thành công]
+    AB --> AG
+
+    AG --> AH[Thông báo kết quả thanh toán]
+    AH --> AI[Khách hàng đánh giá tài xế]
+    AI --> AJ[Lưu lịch sử chuyến đi và đánh giá]
+    AJ --> AK([Kết thúc chuyến])
+```
+7. Functional Requirement Decompositon
+
+8. Business Rules & Exception
+
+
 
