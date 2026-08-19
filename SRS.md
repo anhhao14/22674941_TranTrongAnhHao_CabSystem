@@ -23,3 +23,14 @@ Công ty ABC đang phụ thuộc nhiều vào quy trình đặt xe và phân cô
 | Nhóm phát triển | Phân tích, thiết kế và xây dựng hệ thống |
 
 Stakeholder Matrix mức ảnh hưởng của các stakehoder trong hệ thống
+
+3. Business Goal
+- BG01: Tự động hóa quy trình đặt xe và phân công tài xế
+- BG02: Nâng cao trải nghiệm khách hàng
+- BG03: Nâng cao hiệu quả vận hành
+- BG04: Tối ưu hóa việc sử dụng tài xế
+- BG05: Quản lý doanh thu và thanh toán tập trung
+- BG06: Cải thiện khả năng giám sát và ra quyết định
+- BG07:
+
+4. Scope(Phạm vi)
